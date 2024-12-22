@@ -1,5 +1,7 @@
 ﻿//                         0       1         2
 string[] allowedSigns = ["fire", "water", "grass"];
+int firstPlayerPoints = 0;
+int secondPlayerPoints = 0;
 
 Console.WriteLine($"Zagrajmy w {string.Join(" ", allowedSigns)}");
 
@@ -16,12 +18,17 @@ else if ((firstSign == allowedSigns[0] && secondSign == allowedSigns[2])
         || (firstSign == allowedSigns[2] && secondSign == allowedSigns[1]))
 {
     Console.WriteLine("G1 MISZCZ!");
+    // firstPlayerPoints = firstPlayerPoints + 1;
+    firstPlayerPoints += 1;
+    // firstPlayerPoints++;
 } 
 else
 {
     Console.WriteLine("G2 MISZCZ!");
+    secondPlayerPoints += 1;
 }
 
+Console.WriteLine($"G1: {firstPlayerPoints} - G2: {secondPlayerPoints}");
 Console.WriteLine("GG");
 
 // typ_zwracanych_danych NazwaMetody(typ_danej danaPierwsza, typ_danej danaDruga)
