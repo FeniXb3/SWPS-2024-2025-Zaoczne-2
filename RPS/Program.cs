@@ -1,19 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-const string firstAllowedSign = "fire";
+﻿const string firstAllowedSign = "fire";
 const string secondAllowedSign = "water";
 const string thirdAllowedSign = "grass";
 
 Console.WriteLine("Zagrajmy w rock paper scissors");
-// Console.WriteLine("Graczu 1, podaj znak (rock/paper/scissors)");
 Console.WriteLine($"Graczu 1, podaj znak ({firstAllowedSign}/{secondAllowedSign}/{thirdAllowedSign})");
-// Console.WriteLine("Graczu 1, podaj znak (" +firstAllowedSign + "/" + secondAllowedSign + "/" + thirdAllowedSign +")");
-// typ nazwa;
-// typ nazwa = wartosc;
 string? firstSign = Console.ReadLine();
 
 while (firstSign != firstAllowedSign && firstSign != secondAllowedSign && firstSign != thirdAllowedSign)
-// while (!(firstSign == firstAllowedSign) && firstSign != secondAllowedSign && firstSign != thirdAllowedSign)
-// while (!(firstSign == firstAllowedSign || firstSign == secondAllowedSign || firstSign == thirdAllowedSign))
 {
     Console.WriteLine("Niepoprawny znak");
     Console.WriteLine($"Graczu 1, podaj POPRAWNY znak ({firstAllowedSign}/{secondAllowedSign}/{thirdAllowedSign})");
@@ -23,7 +16,7 @@ while (firstSign != firstAllowedSign && firstSign != secondAllowedSign && firstS
 Console.WriteLine("Graczu 2, podaj znak (rock/paper/scissors)");
 string? secondSign = Console.ReadLine();
 
-if (firstSign == secondSign /*wyrażenie, którego wynikiem jest prawda lub fałsz*/)
+if (firstSign == secondSign)
 {
     Console.WriteLine("Remis");
     Console.WriteLine("Ależ jesteście zgodni");
