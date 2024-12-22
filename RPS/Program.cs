@@ -6,8 +6,7 @@ int expectedPoints = 3;
 
 Console.WriteLine($"Zagrajmy w {string.Join(" ", allowedSigns)}");
 
-// while (!(firstPlayerPoints == expectedPoints || secondPlayerPoints == expectedPoints))
-while (firstPlayerPoints != expectedPoints && secondPlayerPoints != expectedPoints)
+while (firstPlayerPoints < expectedPoints && secondPlayerPoints < expectedPoints)
 {
     string firstSign = GetSign(1);
     string secondSign = GetSign(2);
@@ -23,17 +22,17 @@ while (firstPlayerPoints != expectedPoints && secondPlayerPoints != expectedPoin
     {
         Console.WriteLine("G1 MISZCZ!");
         // firstPlayerPoints = firstPlayerPoints + 1;
-        firstPlayerPoints += 1;
+        firstPlayerPoints += 2;
         // firstPlayerPoints++;
     }
     else
     {
         Console.WriteLine("G2 MISZCZ!");
-        secondPlayerPoints += 1;
+        secondPlayerPoints += 2;
     }
     Console.WriteLine($"G1: {firstPlayerPoints} - G2: {secondPlayerPoints}");
 
-    // if (firstPlayerPoints == expectedPoints || secondPlayerPoints == expectedPoints)
+    // if (firstPlayerPoints >= expectedPoints || secondPlayerPoints >= expectedPoints)
     // {
     //     break;
     // }
