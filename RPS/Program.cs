@@ -6,7 +6,8 @@ int expectedPoints = 3;
 
 Console.WriteLine($"Zagrajmy w {string.Join(" ", allowedSigns)}");
 
-while (!(firstPlayerPoints == expectedPoints || secondPlayerPoints == expectedPoints))
+// while (!(firstPlayerPoints == expectedPoints || secondPlayerPoints == expectedPoints))
+while (firstPlayerPoints != expectedPoints && secondPlayerPoints != expectedPoints)
 {
     string firstSign = GetSign(1);
     string secondSign = GetSign(2);
