@@ -5,7 +5,8 @@ Console.WriteLine("Zagrajmy w rock paper scissors");
 Console.WriteLine($"Graczu 1, podaj znak ({string.Join("/", allowedSigns)})");
 string? firstSign = Console.ReadLine();
 // dopóki warunek w nawiasie okrągłymjest spełniony, wykonaj to, co jest w nawiasie klamrowym poniżej
-while (firstSign != allowedSigns[0] && firstSign != allowedSigns[1] && firstSign != allowedSigns[2])
+
+while (!allowedSigns.Contains(firstSign))
 {
     Console.WriteLine("Niepoprawny znak");
     Console.WriteLine($"Graczu 1, podaj POPRAWNY znak ({string.Join("/", allowedSigns)})");
