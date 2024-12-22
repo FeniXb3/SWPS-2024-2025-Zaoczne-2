@@ -1,11 +1,9 @@
 ﻿//                         0       1         2
 string[] allowedSigns = ["fire", "water", "grass"];
 
-Console.WriteLine("Zagrajmy w rock paper scissors");
+Console.WriteLine($"Zagrajmy w {string.Join(" ", allowedSigns)}");
 Console.WriteLine($"Graczu 1, podaj znak ({string.Join("/", allowedSigns)})");
 string? firstSign = Console.ReadLine();
-// dopóki warunek w nawiasie okrągłymjest spełniony, wykonaj to, co jest w nawiasie klamrowym poniżej
-
 while (!allowedSigns.Contains(firstSign))
 {
     Console.WriteLine("Niepoprawny znak");
@@ -13,8 +11,14 @@ while (!allowedSigns.Contains(firstSign))
     firstSign = Console.ReadLine();
 }
 
-Console.WriteLine("Graczu 2, podaj znak (rock/paper/scissors)");
+Console.WriteLine($"Graczu 2, podaj znak ({string.Join("/", allowedSigns)})");
 string? secondSign = Console.ReadLine();
+while (!allowedSigns.Contains(secondSign))
+{
+    Console.WriteLine("Niepoprawny znak");
+    Console.WriteLine($"Graczu 2, podaj POPRAWNY znak ({string.Join("/", allowedSigns)})");
+    secondSign = Console.ReadLine();
+}
 
 if (firstSign == secondSign)
 {
