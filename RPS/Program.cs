@@ -2,23 +2,9 @@
 string[] allowedSigns = ["fire", "water", "grass"];
 
 Console.WriteLine($"Zagrajmy w {string.Join(" ", allowedSigns)}");
-Console.WriteLine($"Graczu 1, podaj znak ({string.Join("/", allowedSigns)})");
-string? firstSign = Console.ReadLine();
-while (!allowedSigns.Contains(firstSign))
-{
-    Console.WriteLine("Niepoprawny znak");
-    Console.WriteLine($"Graczu 1, podaj POPRAWNY znak ({string.Join("/", allowedSigns)})");
-    firstSign = Console.ReadLine();
-}
 
-Console.WriteLine($"Graczu 2, podaj znak ({string.Join("/", allowedSigns)})");
-string? secondSign = Console.ReadLine();
-while (!allowedSigns.Contains(secondSign))
-{
-    Console.WriteLine("Niepoprawny znak");
-    Console.WriteLine($"Graczu 2, podaj POPRAWNY znak ({string.Join("/", allowedSigns)})");
-    secondSign = Console.ReadLine();
-}
+string firstSign = GetSign(1);
+string secondSign = GetSign(2);
 
 if (firstSign == secondSign)
 {
@@ -37,3 +23,18 @@ else
 }
 
 Console.WriteLine("GG");
+
+// typ_zwracanych_danych NazwaMetody(typ_danej danaPierwsza, typ_danej danaDruga)
+string GetSign(int playerNumber)
+{
+    Console.WriteLine($"Graczu {playerNumber}, podaj znak ({string.Join("/", allowedSigns)})");
+    string? sign = Console.ReadLine();
+    while (!allowedSigns.Contains(sign))
+    {
+        Console.WriteLine("Niepoprawny znak");
+        Console.WriteLine($"Graczu {playerNumber}, podaj POPRAWNY znak ({string.Join("/", allowedSigns)})");
+        sign = Console.ReadLine();
+    }
+
+    return sign;
+}
