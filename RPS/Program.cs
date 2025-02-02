@@ -1,5 +1,11 @@
 ﻿//                         0       1         2
 string[] allowedSigns = ["fire", "water", "grass"];
+
+string GetLowercaseInput()
+{
+    return Console.ReadLine()?.Trim().ToLower() ?? string.Empty;
+}
+
 int firstPlayerPoints = 0;
 int secondPlayerPoints = 0;
 int expectedPoints = 3;
@@ -44,12 +50,13 @@ Console.WriteLine("GG");
 string GetSign(int playerNumber)
 {
     Console.WriteLine($"Graczu {playerNumber}, podaj znak ({string.Join("/", allowedSigns)})");
-    string? sign = Console.ReadLine();
+    string sign = GetLowercaseInput();
+
     while (!allowedSigns.Contains(sign))
     {
         Console.WriteLine("Niepoprawny znak");
         Console.WriteLine($"Graczu {playerNumber}, podaj POPRAWNY znak ({string.Join("/", allowedSigns)})");
-        sign = Console.ReadLine();
+        sign = GetLowercaseInput();
     }
 
     return sign;
