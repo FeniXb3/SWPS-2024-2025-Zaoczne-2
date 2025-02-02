@@ -9,13 +9,14 @@ string GetLowercaseInput()
 int firstPlayerPoints = 0;
 int secondPlayerPoints = 0;
 int expectedPoints;
-int defaultExpectedPoints = 3;
+int minDefaultExpectedPoints = 3;
+int maxDefaultExpectedPoints = 9;
 
 Console.WriteLine("Do ilu punktów chcecie grać?");
 bool result = int.TryParse(Console.ReadLine(), out expectedPoints);
 if (result == false)
 {
-    expectedPoints = defaultExpectedPoints;
+    expectedPoints = Random.Shared.Next(minDefaultExpectedPoints, maxDefaultExpectedPoints + 1);
     Console.WriteLine($"Niepoprawna wartość! Zagracie więc do {expectedPoints}");
 }
 
