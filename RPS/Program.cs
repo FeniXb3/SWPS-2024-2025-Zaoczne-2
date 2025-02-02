@@ -8,7 +8,16 @@ string GetLowercaseInput()
 
 int firstPlayerPoints = 0;
 int secondPlayerPoints = 0;
-int expectedPoints = 3;
+int expectedPoints;
+int defaultExpectedPoints = 3;
+
+Console.WriteLine("Do ilu punktów chcecie grać?");
+bool result = int.TryParse(Console.ReadLine(), out expectedPoints);
+if (result == false)
+{
+    expectedPoints = defaultExpectedPoints;
+    Console.WriteLine($"Niepoprawna wartość! Zagracie więc do {expectedPoints}");
+}
 
 Console.WriteLine($"Zagrajmy w {string.Join(" ", allowedSigns)}");
 
