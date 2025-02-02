@@ -3,7 +3,7 @@ string[] allowedSigns = ["fire", "water", "grass"];
 
 string GetLowercaseInput()
 {
-    return Console.ReadLine()?.Trim().ToLower() ?? string.Empty;
+    return (Console.ReadLine() ?? string.Empty).Trim().ToLower();
 }
 
 int firstPlayerPoints = 0;
